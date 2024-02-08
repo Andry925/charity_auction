@@ -3,7 +3,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions, status
-from .serializers import UserSerializer, UserLoginSerializer
+from .serializers import UserSerializer, UserLoginSerializer, UserViewSerializer
 
 
 class UserRegister(APIView):
@@ -31,3 +31,13 @@ class UserLogin(APIView):
             user = serializer.login_user(data)
             login(request, user)
             return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class UserView(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    authentication_classes = (SessionAuthentication,)
+
+    def get(self, request):
+        user_instance = request.user
+        serializer = UserViewSerializer(user_instance)
+        return Response({'user': serializer.data}, status=status.HTTP_200_OK)
