@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -41,3 +41,12 @@ class UserView(APIView):
         user_instance = request.user
         serializer = UserViewSerializer(user_instance)
         return Response({'user': serializer.data}, status=status.HTTP_200_OK)
+
+
+class UserLogout(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    authentication_classes = (SessionAuthentication,)
+
+    def post(self, request):
+        logout(request)
+        return Response(status=status.HTTP_200_OK)
