@@ -43,3 +43,9 @@ class UserLoginSerializer(serializers.ModelSerializer):
         if not user:
             raise ValidationError('such user does not exist')
         return user
+
+
+class UserViewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserCustomModel
+        fields = ('username', 'email')
