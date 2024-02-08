@@ -95,16 +95,34 @@ ul li {
 
 .login {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .login:hover {
     color: #84ADFF;
 }
 
+.login:visited {
+    color: black;
+}
+
+.login:visited:hover {
+    color: #84ADFF;
+}
+
 .signup {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .signup:hover {
+    color: #84ADFF;
+}
+
+.signup:visited {
+    color: black;
+}
+
+.signup:visited:hover {
     color: #84ADFF;
 }

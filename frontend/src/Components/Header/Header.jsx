@@ -1,10 +1,10 @@
 import React from 'react'
-import './Navbar.css'
+import './Header.css'
 
 import logo from '../Assets/logo.svg'
 import companyName from '../Assets/companyName.svg'
 
-const Navbar = () => {
+const Header = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
@@ -17,11 +17,15 @@ const Navbar = () => {
           <li className='top100'>Top 100</li>
           <li><button className="open-collection">Відкрити збір</button></li>
           <li><button className="sell">Продати</button></li>
-          <li className='login'>Увійти</li>
-          <li className='signup'>Реєстрація</li>
+          <li className='login'>
+            <a href="login" className="login">Увійти</a>
+          </li>
+          <li className='signup'>
+            <a href="signup" className="signup">Реєстрація</a>
+          </li>
         </ul>
     </div>
   )
 }
 
-export default Navbar;
+export default Header;

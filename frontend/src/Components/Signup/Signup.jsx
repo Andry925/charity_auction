@@ -1,5 +1,5 @@
 import React from 'react'
-import "./LoginSignup.css"
+import "./Signup.css"
 import { useState } from 'react'
 
 import user from "../Assets/user.svg"
@@ -7,8 +7,8 @@ import envelope from "../Assets/envelope.svg"
 import lock from "../Assets/lock.svg"
 
 
-const LoginSignup = () => {
-    const [action, setAction] = useState("Увійти");
+const Signup = () => { 
+        const [action, setAction] = useState("Реєстрація");
 
   return (
     <div className='container'>
@@ -39,4 +39,4 @@ const LoginSignup = () => {
   )
 }
 
-export default LoginSignup;
+export default Signup;
