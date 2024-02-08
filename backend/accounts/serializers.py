@@ -26,3 +26,26 @@ class UserSerializer(serializers.ModelSerializer):
         user_instance.username = validated_data['username']
         user_instance.save()
         return user_instance
+
+
+class UserLoginSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField()
+    password = serializers.CharField()
+
+    class Meta:
+        model = UserCustomModel
+        fields = ("email", "password")
+
+    def login_user(self, data):
+        email = data.get('email')
+        password = data.get('password')
+        user = authenticate(username=email, password=password)
+        if not user:
+            raise ValidationError('such user does not exist')
+        return user
+
+
+class UserViewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserCustomModel
+        fields = ('username', 'email')
