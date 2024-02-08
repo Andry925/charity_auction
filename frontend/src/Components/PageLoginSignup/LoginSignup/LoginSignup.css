@@ -6,7 +6,6 @@
     border-radius: 10px;
     flex-direction: column;
     margin: auto;
-    margin-top: 197px;
     background: #FFE06A;
     padding-bottom: 30px;
 }
@@ -84,17 +83,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 169px;
-    height: 35px;
+    width: 161px;
+    height: 30px;
     color: white;
     background: #84ADFF;
     border-radius: 10px;
+    border: 3px solid transparent;
 
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
 }
 
+.submit:hover {
+    background: #C7D8FB;
+    border: 3px solid #84ADFF;
+    
+    color: black;
+}
+
 .yellow {
     background: #FFC700;
+    cursor: pointer;
+}
+
+.yellow:hover {
+    background: #FFE06A;
+    border: 3px solid white;
+        
+    color: black;
 }

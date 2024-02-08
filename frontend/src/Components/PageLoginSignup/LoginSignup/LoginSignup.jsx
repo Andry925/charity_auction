@@ -19,15 +19,15 @@ const LoginSignup = () => {
         <div className="inputs">
         {action === "Увійти" ? <div></div>:
                 <div className="input">
-                <img src={user} alt="User" />
+                <img src={user} alt="user" />
                 <input type="text" placeholder="Ім'я"/>
                 </div>}
             <div className="input">
-                <img src={envelope} alt="Email" />
+                <img src={envelope} alt="email" />
                 <input type="email" placeholder='E-mail'/>
             </div>
             <div className="input">
-                <img src={lock} alt="Lock" />
+                <img src={lock} alt="lock" />
                 <input type="password" placeholder='Пароль'/>
             </div>
         </div>
@@ -39,4 +39,4 @@ const LoginSignup = () => {
   )
 }
 
-export default LoginSignup
+export default LoginSignup;
