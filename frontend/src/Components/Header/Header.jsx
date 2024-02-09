@@ -15,9 +15,9 @@ const Header = () => {
       </div>
         
         <ul>
-          <li className='live'>LIVE</li>
-          <li className='top100'>Top 100</li>
-          <li><button className="open-collection">Відкрити збір</button></li>
+          {/* <li className='live'>LIVE</li>
+          <li className='top100'>Top 100</li> */}
+          {/* <li><button className="open-collection">Відкрити збір</button></li> */}
           <li><button className="sell">Продати</button></li>
           <li className='login'>
             <a href="login" className="login">Увійти</a>
