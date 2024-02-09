@@ -20,9 +20,10 @@ const Header = () => {
           <li className='live'>LIVE</li>
           <li className='top100'>Top 100</li>
           <li><button className="open-collection">Відкрити збір</button></li>
-      </div>
+
         
-        <ul>
+        </ul>
+      <ul>
           {/* <li className='live'>LIVE</li>
           <li className='top100'>Top 100</li> */}
           {/* <li><button className="open-collection">Відкрити збір</button></li> */}
