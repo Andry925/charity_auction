@@ -8,7 +8,6 @@ import Categories from '../Components/Categories/Categories';
 // import LastLots from '../Components/LastLots/LastLots';
 import Footer from '../Components/Footer/Footer'
 
-
 const Home = () => {
   return (
     <div>

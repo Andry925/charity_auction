@@ -38,6 +38,8 @@ const Footer = () => {
                    <img src={logo} alt="logo" className="logo" />
                     <img src={companyName} alt="company" className='company'/> 
                     </a>
+                   <img src={logo} alt="logo" className="logo" />
+                    <img src={companyName} alt="company" className='company'/> 
                 </div>        
         </div>
     </div>
