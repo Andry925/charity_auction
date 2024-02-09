@@ -34,8 +34,10 @@ const Footer = () => {
                     <p className='copyright'>Copyright ©</p>
                 </div>
                 <div className='company-name-logo'>
+                    <a href="home" className="home-page">
                    <img src={logo} alt="logo" className="logo" />
                     <img src={companyName} alt="company" className='company'/> 
+                    </a>
                 </div>        
         </div>
     </div>

@@ -8,8 +8,10 @@ const Header = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
-        <img src={logo} alt="logo" className="logo" />
+        <a href="home" className="home-page">
+          <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
+        </a>
       </div>
         
         <ul>
