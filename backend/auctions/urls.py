@@ -21,5 +21,4 @@ urlpatterns = [
     path('api/latest-items/', LatestItemsListAPIView.as_view(), name='latest-items'),
     path('api/create-auction/', CreateAuctionAPIView.as_view(), name='create-auction'),
     path('api/edit-auction/<int:pk>/', EditAuctionAPIView.as_view(), name='edit-auction'),
-    # Include other URL patterns
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
