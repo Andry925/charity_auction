@@ -13,7 +13,6 @@ const Header = () => {
         <img src={companyName} alt="company" className='company'/>
         </a>
       </div>
-        
         <ul>
           {/* <li className='live'>LIVE</li>
           <li className='top100'>Top 100</li> */}
