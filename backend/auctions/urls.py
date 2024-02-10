@@ -1,17 +1,25 @@
-from django.urls import path, include, re_path
-from django.views.generic import RedirectView
-from .views import CategoryListView, ItemListView, BidListView, CreateBidView, home_view, auction_list
+from django.urls import path
+from .views import (
+    CategoryListView,
+    ItemListView,
+    BidListView,
+    CreateBidView,
+    EditAuctionAPIView,
+    LatestItemsListAPIView,
+    CreateAuctionAPIView,
+    APIRootView,
+)
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
-from . import views
 
 urlpatterns = [
-    path('categories/', views.CategoryListView.as_view(), name='category-list'),
-    path('items/', views.ItemListView.as_view(), name='item-list'),
-    path('bids/', views.BidListView.as_view(), name='bid-list'),
-    path('items/<int:item_id>/bid/', views.CreateBidView.as_view(), name='create-bid'),
-    path('', home_view, name='home'),
-    path('auctions/', auction_list, name='auction_list'),
+    path('api/', APIRootView.as_view(), name='api-root'),
+    path('api/categories/', CategoryListView.as_view(), name='category-list'),
+    path('api/items/', ItemListView.as_view(), name='item-list'),
+    path('api/bids/', BidListView.as_view(), name='bid-list'),
+    path('api/items/<int:item_id>/bid/', CreateBidView.as_view(), name='create-bid'),
+    path('api/latest-items/', LatestItemsListAPIView.as_view(), name='latest-items'),
+    path('api/create-auction/', CreateAuctionAPIView.as_view(), name='create-auction'),
+    path('api/edit-auction/<int:pk>/', EditAuctionAPIView.as_view(), name='edit-auction'),
+    # Include other URL patterns
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

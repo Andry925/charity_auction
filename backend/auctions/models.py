@@ -18,7 +18,6 @@ class Item(models.Model):
     end_time = models.DateTimeField()
     is_active = models.BooleanField(default=True)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='items')
-
     def __str__(self):
         return self.title
 

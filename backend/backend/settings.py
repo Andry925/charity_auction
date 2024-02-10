@@ -26,13 +26,14 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',    "http://localhost:3000",  '[::1]']
 
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
     'http://127.0.0.1',
     'http://0.0.0.0',
+    "http://localhost:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
