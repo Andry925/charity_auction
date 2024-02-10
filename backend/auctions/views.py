@@ -9,18 +9,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 class APIRootView(APIView):
-    """
-    API Root view to display a welcome message or list available endpoints.
-    """
     def get(self, request):
-        # Example response. You can customize it or list available endpoints
         api_endpoints = {
             'categories': request.build_absolute_uri('categories/'),
             'items': request.build_absolute_uri('items/'),
             'bids': request.build_absolute_uri('bids/'),
             'create-auction': request.build_absolute_uri('create-auction/'),
             'latest-items': request.build_absolute_uri('latest-items/'),
-            # Add other endpoints as needed
         }
         return Response(api_endpoints)
 
