@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import user from "../Assets/user.svg";
 import envelope from "../Assets/envelope.svg";
 import lock from "../Assets/lock.svg";
+import './Signup.css'
 
 axios.defaults.withCredentials = true;
 
