@@ -8,7 +8,7 @@ const HeaderAccount = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
-        <a href="home-acc" className="home-page">
+        <a href="/home-acc" className="home-page">
           <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
         </a>
@@ -19,10 +19,10 @@ const HeaderAccount = () => {
           {/* <li><button className="open-collection">Відкрити збір</button></li> */}
           <li><button className="sell">Продати</button></li>
           <li className='cabinet'>
-            <a href="cabinet" className="cabinet">Кабінет</a>
+            <a href="/cabinet" className="cabinet">Кабінет</a>
           </li>
           <li className='logout'>
-            <a href="home" className="logout">Вийти</a>
+            <a href="/home" className="logout">Вийти</a>
           </li>
         </ul>
     </div>

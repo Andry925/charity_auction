@@ -5,7 +5,7 @@ import Search from '../Components/Search/Search';
 import HomeAllAuctions from '../Components/HomeAllAuctions/HomeAllAuctions';
 import ActualCollections from '../Components/ActualCollections/ActualCollections';
 import Categories from '../Components/Categories/Categories';
-// import LastLots from '../Components/LastLots/LastLots';
+import LastLots from '../Components/LastLots/LastLots';
 import FooterAccount from '../Components/FooterAccount/FooterAccount'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
         <Search/>
         <HomeAllAuctions/>
         <ActualCollections/>
-        {/* <LastLots/> */}
+        <LastLots/>
         <Categories/>
         <FooterAccount/>
     </div>

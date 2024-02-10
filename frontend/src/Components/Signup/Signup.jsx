@@ -1,16 +1,16 @@
-import React from 'react'
-import "./Signup.css"
-import { useState } from 'react'
-import axios from 'axios'
-import user from "../Assets/user.svg"
-import envelope from "../Assets/envelope.svg"
-import lock from "../Assets/lock.svg"
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import user from "../Assets/user.svg";
+import envelope from "../Assets/envelope.svg";
+import lock from "../Assets/lock.svg";
 
-axios.defaults.withCredentials = true
+axios.defaults.withCredentials = true;
 
+const Signup = ({ setCurrentUser }) => {
+  const navigate = useNavigate();
 
-const Signup = ({setCurrentUser}) => {
-    const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -20,45 +20,41 @@ const Signup = ({setCurrentUser}) => {
         email,
         username,
         password,
-      }, { withCredentials: true })
+      });
 
       if (response.status === 201 || response.status === 200) {
-        setCurrentUser(true)
+        navigate('/login');
       }
     } catch (error) {
-      console.error("Failed registration", error)
+      console.error("Failed registration", error);
     }
-  }
 
+    console.log('Registration function called');
+  };
 
   return (
     <div className='container'>
-        <div className="header">
-            <div className="text">Реєстрація</div>
-            <div className="underline"></div>
+      <div className="header">
+        <div className="text">Реєстрація</div>
+        <div className="underline"></div>
+      </div>
+      <div className="inputs">
+        <div className="input">
+          <img src={user} alt="user"/>
+          <input type="text" placeholder="Ім'я" onChange={(e) => setUsername(e.target.value)}/>
         </div>
-        <div className="inputs">
-            <div className="input">
-                <img src={user} alt="user"/>
-                <input type="text" placeholder="Ім'я" onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div className="input">
-                <img src={envelope} alt="email"/>
-                <input type="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)}/>
-            </div>
-            <div className="input">
-                <img src={lock} alt="lock"/>
-                <input type="password" placeholder='Пароль' onChange={(e) => setPassword(e.target.value)}/>
-            </div>
+        <div className="input">
+          <img src={envelope} alt="email"/>
+          <input type="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)}/>
         </div>
-        <div className="submit-container">
-          <a href="login" className='submit'>
-            <div
-              className="submit"
-              onClick={Registration}>Реєстрація
-            </div>
-          </a>
+        <div className="input">
+          <img src={lock} alt="lock"/>
+          <input type="password" placeholder='Пароль' onChange={(e) => setPassword(e.target.value)}/>
         </div>
+      </div>
+      <div className="submit-container">
+        <button className="submit" onClick={Registration}>Реєстрація</button>
+      </div>
     </div>
   )
 }

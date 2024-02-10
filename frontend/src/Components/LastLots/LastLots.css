@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 293px;
+    width: 243px;
     height: 30px;
     background: #FFE06A;
     border-radius: 10px;
@@ -19,8 +19,21 @@
     font-weight: 700;
 }
 
+.all-lots-caption {
+    color: #84ADFF;
+    text-decoration: none;
+}
+
+.all-lots-caption:hover {
+    color: white;
+}
+
 .last-lots  {
     margin-left: 46px;
+    margin-right: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .lot-caption {
@@ -39,7 +52,7 @@
     height: 249px;
     background: white;
     border-radius: 10px;
-    margin-right: 42px;
+    margin-right: 16px;
 }
 
 .lot-home:hover {
@@ -70,6 +83,7 @@
     width: 114px;
     height: 33px;
 
+    color: #FF7500;
     font-size: 14px;
     font-weight: 600;
 }

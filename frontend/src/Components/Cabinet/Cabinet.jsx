@@ -56,7 +56,7 @@ const Cabinet = () => {
             </div>
         </div>
         <div className='logout'>
-            <a href='home' className='submit'>
+            <a href='/home' className='submit'>
                 <div
                     className="submit">
                     Вийти

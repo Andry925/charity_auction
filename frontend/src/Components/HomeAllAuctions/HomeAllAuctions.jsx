@@ -14,7 +14,7 @@ const HomeAllAuctions = () => {
             <p className='text-register'>Реєструйся</p>
             <p className='text-buy'>Купуй лот</p>
             <p className='text-help'>Допомагай закрити збір!</p>
-            <button className='all-auctions'>Усі аукціони</button>
+            <a href="/all-auctions"><button className='all-auctions'>Усі аукціони</button></a>
         </div>
         <div className='logo-name-container'>
             <img src={logoName} alt="logo" className='logoName'/>

@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
-        <a href="home" className="home-page">
+        <a href="/home" className="home-page">
           <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
         </a>
@@ -19,10 +19,10 @@ const Header = () => {
           {/* <li><button className="open-collection">Відкрити збір</button></li> */}
           <li><button className="sell">Продати</button></li>
           <li className='login'>
-            <a href="login" className="login">Увійти</a>
+            <a href="/login" className="login">Увійти</a>
           </li>
           <li className='signup'>
-            <a href="signup" className="signup">Реєстрація</a>
+            <a href="/signup" className="signup">Реєстрація</a>
           </li>
         </ul>
     </div>

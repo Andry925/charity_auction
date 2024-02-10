@@ -42,11 +42,11 @@ const Login = ({ setCurrentUser }) => {
             </div>
         </div>
       <div className="submit-container">
-        <a href='home-acc' className='submit'>
-          <div
+        <a href='/home-acc' className='submit'>
+          <button
             className="submit"
             onClick={Login}>Увійти
-          </div>
+          </button>
         </a>
       </div>
     </div>
