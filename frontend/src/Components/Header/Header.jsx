@@ -12,18 +12,8 @@ const Header = () => {
           <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
         </a>
-        <img src={logo} alt="logo" className="logo" />
-        <img src={companyName} alt="company" className='company'/>
       </div>
-        
         <ul>
-          <li className='live'>LIVE</li>
-          <li className='top100'>Top 100</li>
-          <li><button className="open-collection">Відкрити збір</button></li>
-
-        
-        </ul>
-      <ul>
           {/* <li className='live'>LIVE</li>
           <li className='top100'>Top 100</li> */}
           {/* <li><button className="open-collection">Відкрити збір</button></li> */}
