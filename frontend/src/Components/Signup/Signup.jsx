@@ -34,28 +34,34 @@ const Signup = ({setCurrentUser}) => {
   return (
     <div className='container'>
         <div className="header">
-            <div className="text">{action}</div>
+            <div className="text">Реєстрація</div>
             <div className="underline"></div>
         </div>
         <div className="inputs">
-        {action === "Увійти" ? <div></div>:
-                <div className="input">
-                <img src={user} alt="user" />
-                <input type="text" placeholder="Ім'я"/>
-                </div>}
             <div className="input">
-                <img src={envelope} alt="email" />
-                <input type="email" placeholder='E-mail'/>
+                <img src={user} alt="user"/>
+                <input type="text" placeholder="Ім'я" onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="input">
-                <img src={lock} alt="lock" />
-                <input type="password" placeholder='Пароль'/>
+                <img src={envelope} alt="email"/>
+                <input type="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)}/>
+            </div>
+            <div className="input">
+                <img src={lock} alt="lock"/>
+                <input type="password" placeholder='Пароль' onChange={(e) => setPassword(e.target.value)}/>
             </div>
         </div>
         <div className="submit-container">
-            <div className={action === "Увійти" ? "submit yellow" : "submit"} onClick={() => {setAction("Реєстрація")}}>Реєстрація</div>
-            <div className={action === "Реєстрація" ? "submit yellow" : "submit"} onClick={() => {setAction("Увійти")}}>Увійти</div>
+        <div
+          className="submit yellow"
+          onClick={Registration}>Реєстрація
         </div>
+        <div
+          className="submit"
+          onClick={() => {
+          }}>Увійти
+        </div>
+      </div>
     </div>
   )
 }
