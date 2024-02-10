@@ -6,8 +6,6 @@ import search from '../Assets/search.svg';
 import filter from '../Assets/filter.svg'
 
 const Search = () => {
-
-const Search = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const [selectedFilters, setSelectedFilters] = useState({
@@ -31,18 +29,10 @@ const Search = () => {
   return (
     <div className="search-container">
         <div className='search-box'>
-        <input type="text" className="search-box-text" placeholder='...Знайти лот' />
-        <img src={search} alt="search" className='search' />
-        </div>
-        <div className='filter-box'>
-            <img src={filter} alt="filter" className="filter" />
-        </div>
-    </div>
-   
-  )
-        <a href='' onClick={handleSearch}>
-          <img src={search} alt="search" className='search' />
-        </a>
+          <input type="text" className="search-box-text" placeholder='...Знайти лот' />
+          <a onClick={handleSearch}>
+              <img src={search} alt="search" className='search' />
+          </a>
         </div>
         <div className='filter-container'>
           <div className='filter-box' onClick={() => setIsFilterOpen(true)}>
@@ -76,7 +66,7 @@ const Search = () => {
                   <input 
                     type='range' 
                     min='1'
-                    max='99999'
+                    max='50000'
                     value={value}
                     onChange={handleSliderChange}
                     className='slider'
@@ -90,7 +80,7 @@ const Search = () => {
         </div>
     </div>
    
-  );
+  )
 }
 
 export default Search;
