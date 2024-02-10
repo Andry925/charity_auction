@@ -8,14 +8,15 @@ const Header = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
-        <img src={logo} alt="logo" className="logo" />
+        <a href="home" className="home-page">
+          <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
+        </a>
       </div>
-        
         <ul>
-          <li className='live'>LIVE</li>
-          <li className='top100'>Top 100</li>
-          <li><button className="open-collection">Відкрити збір</button></li>
+          {/* <li className='live'>LIVE</li>
+          <li className='top100'>Top 100</li> */}
+          {/* <li><button className="open-collection">Відкрити збір</button></li> */}
           <li><button className="sell">Продати</button></li>
           <li className='login'>
             <a href="login" className="login">Увійти</a>
