@@ -97,12 +97,18 @@
     align-items: center;
     justify-content: center;
     margin-top: 16px;
+    border: 3px solid transparent;
+    cursor: pointer;
 
     width: 114px;
     height: 164px;
     background: white;
     border-radius: 10px;
-    margin-right: 42px;
+    margin-right: 34px;
+}
+
+.lot:hover {
+    border: 3px solid #84ADFF;
 }
 
 .lot-photo {

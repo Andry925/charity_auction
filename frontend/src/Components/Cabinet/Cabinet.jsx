@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./Cabinet.css"
 
 const Cabinet = () => {
-    const[price, setPrice] = useState('');
+    const[price, setPrice] = useState('')
     const[descr, setDescr] = useState('')
 
   return (
