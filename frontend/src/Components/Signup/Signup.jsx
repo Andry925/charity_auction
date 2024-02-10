@@ -52,16 +52,13 @@ const Signup = ({setCurrentUser}) => {
             </div>
         </div>
         <div className="submit-container">
-        <div
-          className="submit yellow"
-          onClick={Registration}>Реєстрація
+          <a href="login" className='submit'>
+            <div
+              className="submit"
+              onClick={Registration}>Реєстрація
+            </div>
+          </a>
         </div>
-        <div
-          className="submit"
-          onClick={() => {
-          }}>Увійти
-        </div>
-      </div>
     </div>
   )
 }

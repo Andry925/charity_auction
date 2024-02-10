@@ -4,14 +4,17 @@ import './index.css';
 
 import App from './App';
 import Home from './Pages/Home'
+import HomeAccount from './Pages/HomeAccount'
 import LoginPage from './Pages/LoginPage'
 import SignupPage from "./Pages/SignupPage"
+import CabinetPage from './Pages/CabinetPage';
 
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -23,12 +26,20 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
+    path: "home-acc",
+    element: <HomeAccount/>,
+  },
+  {
     path: "signup",
     element: <SignupPage/>,
   },
   {
     path: "login",
     element: <LoginPage/>,
+  },
+  {
+    path: "cabinet",
+    element: <CabinetPage/>,
   },
 ]);
 

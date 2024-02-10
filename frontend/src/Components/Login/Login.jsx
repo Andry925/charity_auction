@@ -42,18 +42,15 @@ const Login = ({ setCurrentUser }) => {
             </div>
         </div>
       <div className="submit-container">
-        <div
-          className="submit yellow"
-          onClick={Login}>Увійти
-        </div>
-        <div
-          className="submit yellow"
-          onClick={() => {
-          }}>Реєстрація
-        </div>
+        <a href='home-acc' className='submit'>
+          <div
+            className="submit"
+            onClick={Login}>Увійти
+          </div>
+        </a>
       </div>
     </div>
   )
 }
 
-export default Login
+export default Login;
