@@ -1,14 +1,35 @@
 import React from 'react'
 import "./Signup.css"
 import { useState } from 'react'
-
+import axios from 'axios'
 import user from "../Assets/user.svg"
 import envelope from "../Assets/envelope.svg"
 import lock from "../Assets/lock.svg"
 
+axios.defaults.withCredentials = true
 
-const Signup = () => { 
-        const [action, setAction] = useState("Реєстрація");
+
+const Signup = ({setCurrentUser}) => {
+    const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const Registration = async () => {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/accounts/register", {
+        email,
+        username,
+        password,
+      }, { withCredentials: true })
+
+      if (response.status === 201 || response.status === 200) {
+        setCurrentUser(true)
+      }
+    } catch (error) {
+      console.error("Failed registration", error)
+    }
+  }
+
 
   return (
     <div className='container'>
