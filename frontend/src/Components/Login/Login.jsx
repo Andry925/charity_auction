@@ -20,7 +20,7 @@ const Login = ({ setCurrentUser }) => {
       }, { withCredentials: true });
 
       if (response.status === 201 || response.status === 200) {
-        setCurrentUser(true);
+          localStorage.setItem('sessionId', response.data.sessionId);
         navigate('/home-acc');
       }
     } catch (error) {
