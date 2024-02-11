@@ -17,7 +17,7 @@ const Signup = ({ setCurrentUser }) => {
 
   const Registration = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/accounts/register", {
+      const response = await axios.post("http://127.0.0.1:8000/register", {
         email,
         username,
         password,

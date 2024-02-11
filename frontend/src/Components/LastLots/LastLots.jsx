@@ -8,12 +8,12 @@ const LastLots = () => {
     useEffect(() => {
         axios.get('/api/latest-items/')
             .then(response => {
-                setLots(response.data); // Зберігаємо дані у стан
+                setLots(response.data); 
             })
             .catch(error => {
                 console.error('Error fetching data: ', error);
             })
-    }, []); // Пустий масив залежностей, щоб запускати ефект лише при монтуванні компоненту
+    }, []); 
 
     return (
         <div className='last-lots-container'>

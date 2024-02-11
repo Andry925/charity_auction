@@ -14,7 +14,7 @@ const Login = ({ setCurrentUser }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/accounts/login", {
+      const response = await axios.post("http://127.0.0.1:8000/login", {
         email,
         password,
       }, { withCredentials: true });
