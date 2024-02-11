@@ -1,80 +1,114 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './AllLots.css'
 
 const AllLots = () => {
-    const[price, setPrice] = useState('')
-    const[descr, setDescr] = useState('')
+    const [lots, setLots] = useState([]);
+
+        useEffect(() => {
+            axios.get('/api/latest-items/')
+                .then(response => {
+                    setLots(response.data); 
+                })
+                .catch(error => {
+                    console.error('Error fetching data: ', error);
+                })
+        }, []); 
     
   return (
     <div className="al-lots-container">
         <div className='last-lots'>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
+        <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                </div>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                </div>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
+                </a>
+                <a href='/auction'>
+                    <div className="lot-home">
+                        <div className="lot-home-photo">
+                        {lots.map(lot => (
+                           <div key={lot.id}>
+                           <img src={lot.image_url} alt="lot"/>
+                           <p className='lot-home-descr'>{lot.description}</p>
+                           <p className='lot-home-price'>{lot.current_bid} грн</p>
+                            </div>
+                                    ))}
+                        </div>
                     </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
-                    </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
-                    </div>
-                </div>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
-                    </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
-                    </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
-                    </div>
-                </div>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
-                    </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
-                    </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
-                    </div>
-                </div>
-                <div className="lot-home">
-                    <div className="lot-home-photo">
-                        {/* <img src="api-photo" alt="lot" /> */}
-                    </div>
-                    <div className='lot-home-descr'>
-                        <p>{descr}</p>
-                    </div>
-                    <div className="lot-home-price">
-                        <p>{price} грн</p>
-                    </div>
-                </div>
+                </a>
         </div>
     </div>
   )

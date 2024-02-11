@@ -44,23 +44,25 @@ const Cabinet = () => {
                 </div>
                 <div className='account-lots'>
                     <div className="lot-caption">Мої аукціони</div>
-                    <div className='lot-edit'>
-                        {lots.map((lot) => (
-                            <div key={lot.id} className='lot'>
-                                <div className="lot-photo">
-                                </div>
-                                <div className='lot-descr'>
-                                    <p>{lot.descr}</p>
-                                </div>
-                                <div className="lot-price">
-                                    <p>{lot.price} грн</p>
-                                </div>
-                                <Link to="/edit" className="edit-button-cabinet">
-                                    <button className='edit' onClick={() => handleEdit(lot.id)}>Редагувати</button>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
+                        <a href="/auction"><div className='lot-edit'>
+                            {lots.map((lot) => (
+                                
+                                    <div key={lot.id} className='lot'>
+                                    <div className="lot-photo">
+                                    </div>
+                                    <div className='lot-descr'>
+                                        <p>{lot.descr}</p>
+                                    </div>
+                                    <div className="lot-price">
+                                        <p>{lot.price}</p>
+                                    </div>
+                                    <Link to="/edit" className="edit-button-cabinet">
+                                        <button className='edit' onClick={() => handleEdit(lot.id)}>Редагувати</button>
+                                    </Link>
+                                </div> 
+                            ))}
+                        </div>
+                    </a>
                 </div>
             </div>
             <div className='logout'>

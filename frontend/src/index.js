@@ -10,6 +10,8 @@ import CabinetPage from './Pages/CabinetPage';
 import AllAuctions from './Pages/AllAuctions';
 import EditLotPage from './Pages/EditLot';
 import CreateLotPage from './Pages/CreateLotPage';
+import AuctionPage from './Pages/AuctionPage';
+
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -72,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: "/create",
     element: <CreateLotPage/>,
+  },
+  {
+    path: "/auction",
+    element: <AuctionPage/>,
   },
 ]);
 
