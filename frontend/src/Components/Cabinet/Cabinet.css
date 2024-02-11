@@ -116,7 +116,7 @@
 }
 
 .edit {
-    width: 119px;
+    width: 116px;
     height: 22px;
     margin-top: 8px;
     background: #FFC700;
@@ -126,6 +126,7 @@
     font-family: 'Montserrat';
     font-weight: 600;
     color: white;
+    text-decoration: none;
 }
 
 .edit:hover {

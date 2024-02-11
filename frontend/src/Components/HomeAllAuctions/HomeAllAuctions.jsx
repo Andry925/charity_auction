@@ -8,10 +8,9 @@ import logoName from '../Assets/logoName.svg';
 
 const HomeAllAuctions = () => {
   const [auctions, setAuctions] = useState([]);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Function to fetch auctions
     const fetchAuctions = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/api/latest-items/");
@@ -24,9 +23,8 @@ const HomeAllAuctions = () => {
     fetchAuctions();
   }, []);
 
-  // Navigate to auction creation page
   const navigateToCreateAuction = () => {
-    navigate('/create-auction');
+    navigate('/all-auctions');
   };
 
   return (
