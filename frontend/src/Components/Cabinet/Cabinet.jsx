@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import "./Cabinet.css";
 
 const Cabinet = () => {
-    const [auctions, setAuctions] = useState([]);
+    const [lots, setLots] = useState([
+        { id: 1, price: '', descr: '' },
+        { id: 2, price: '', descr: '' },
+        { id: 3, price: '', descr: '' }
+    ]);
 
     useEffect(() => {
-        const fetchUserAuctions = async () => {
-            try {
-                // Ensure this URL points to your API for fetching user-specific auctions
-                const response = await axios.get('http://127.0.0.1:8000/api/my-auctions/', {
-                    withCredentials: true // If you're using cookies for authentication
+        // Отримуємо редагований лот з localStorage
+        const editedLot = JSON.parse(localStorage.getItem('editedLot'));
+        if (editedLot) {
+            // Оновлюємо стан лотів, замінюючи редагований лот за його id
+            setLots(prevLots => {
+                return prevLots.map(lot => {
+                    if (lot.id === editedLot.id) {
+                        return editedLot;
+                    }
+                    return lot;
                 });
-                setAuctions(response.data); // Set the user's auctions in the state
-            } catch (error) {
-                console.error('Error fetching user auctions:', error);
-            }
-        };
-
-        fetchUserAuctions();
+            });
+        }
     }, []);
+
+    const handleEdit = (id) => {
+        const editedLot = lots.find(lot => lot.id === id);
+        localStorage.setItem('editedLot', JSON.stringify(editedLot));
+    };
 
     return (
         <div className='container'>
@@ -35,29 +44,34 @@ const Cabinet = () => {
                 </div>
                 <div className='account-lots'>
                     <div className="lot-caption">Мої аукціони</div>
-                    {auctions.map((auction) => (
-                        <div key={auction.id} className="lot">
-                            <div className="lot-photo">
-                                {/* Ensure your server is configured to serve images from the correct path */}
-                                <img src={auction.image_url} alt="lot" />
+                    <div className='lot-edit'>
+                        {lots.map((lot) => (
+                            <div key={lot.id} className='lot'>
+                                <div className="lot-photo">
+                                </div>
+                                <div className='lot-descr'>
+                                    <p>{lot.descr}</p>
+                                </div>
+                                <div className="lot-price">
+                                    <p>{lot.price} грн</p>
+                                </div>
+                                <Link to="/edit" className="edit-button-cabinet">
+                                    <button className='edit' onClick={() => handleEdit(lot.id)}>Редагувати</button>
+                                </Link>
                             </div>
-                            <div className='lot-descr'>
-                                <p>{auction.description}</p>
-                            </div>
-                            <div className="lot-price">
-                                <p>{auction.price} грн</p>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
             <div className='logout'>
                 <a href='/home' className='submit'>
-                    <div className="submit">Вийти</div>
+                    <div className="submit">
+                        Вийти
+                    </div>
                 </a>
             </div>
         </div>
-    );
+    )
 }
 
 export default Cabinet;
