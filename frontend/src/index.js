@@ -9,6 +9,8 @@ import LoginPage from './Pages/LoginPage'
 import SignupPage from "./Pages/SignupPage"
 import CabinetPage from './Pages/CabinetPage';
 import AllAuctions from './Pages/AllAuctions';
+import EditLotPage from './Pages/EditLot';
+import CreateLotPage from './Pages/CreateLotPage';
 
 import reportWebVitals from './reportWebVitals';
 import {
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
   {
     path: "/all-auctions",
     element: <AllAuctions/>,
+  },
+  {
+    path: "/edit",
+    element: <EditLotPage/>,
+  },
+  {
+    path: "/create",
+    element: <CreateLotPage/>,
   },
 ]);
 
