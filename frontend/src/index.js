@@ -4,8 +4,11 @@ import './index.css';
 
 import App from './App';
 import Home from './Pages/Home'
+import HomeAccount from './Pages/HomeAccount'
 import LoginPage from './Pages/LoginPage'
 import SignupPage from "./Pages/SignupPage"
+import CabinetPage from './Pages/CabinetPage';
+import AllAuctions from './Pages/AllAuctions';
 
 import reportWebVitals from './reportWebVitals';
 import {
@@ -13,22 +16,36 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
   },
   {
-    path: "home",
+    path: "/home",
     element: <Home/>,
   },
   {
-    path: "signup",
+    path: "/home-acc",
+    element: <HomeAccount/>,
+  },
+  {
+    path: "/signup",
     element: <SignupPage/>,
   },
   {
-    path: "login",
+    path: "/login",
     element: <LoginPage/>,
+  },
+  {
+    path: "/cabinet",
+    element: <CabinetPage/>,
+  },
+  {
+    path: "/all-auctions",
+    element: <AllAuctions/>,
   },
 ]);
 

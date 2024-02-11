@@ -1,30 +1,32 @@
-import React from 'react'
-import "./Login.css"
-import { useState } from 'react'
-import axios from 'axios'
-import envelope from "../Assets/envelope.svg"
-import lock from "../Assets/lock.svg"
+import React, { useState } from 'react';
+import axios from 'axios';
+import envelope from "../Assets/envelope.svg";
+import lock from "../Assets/lock.svg";
+import { useNavigate } from 'react-router-dom';
+import './Login.css'
 
-axios.defaults.withCredentials = true
+axios.defaults.withCredentials = true;
 
 const Login = ({ setCurrentUser }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const Login = async () => {
+  const handleLogin = async () => {
     try {
       const response = await axios.post("http://127.0.0.1:8000/accounts/login", {
         email,
         password,
-      }, { withCredentials: true })
+      }, { withCredentials: true });
 
-      if (response.status === 200 || response.status === 201) {
-        setCurrentUser(true)
+      if (response.status === 201 || response.status === 200) {
+        navigate('/home-acc');
       }
     } catch (error) {
-      console.error("Such user does not exist", error)
+      console.error("Such user does not exist", error);
     }
   }
+
   return (
     <div className='container'>
         <div className="header">
@@ -42,18 +44,13 @@ const Login = ({ setCurrentUser }) => {
             </div>
         </div>
       <div className="submit-container">
-        <div
-          className="submit yellow"
-          onClick={Login}>Увійти
-        </div>
-        <div
-          className="submit yellow"
-          onClick={() => {
-          }}>Реєстрація
-        </div>
+          <button
+            className="submit"
+            onClick={handleLogin}>Увійти
+          </button>
       </div>
     </div>
   )
 }
 
-export default Login
+export default Login;

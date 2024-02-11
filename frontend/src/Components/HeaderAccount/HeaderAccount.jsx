@@ -1,14 +1,14 @@
 import React from 'react'
-import './Header.css'
+import './HeaderAccount.css'
 
 import logo from '../Assets/logo.svg'
 import companyName from '../Assets/companyName.svg'
 
-const Header = () => {
+const HeaderAccount = () => {
   return (
     <div className='navbar'>
       <div className='company-img'>
-        <a href="/home" className="home-page">
+        <a href="/home-acc" className="home-page">
           <img src={logo} alt="logo" className="logo" />
         <img src={companyName} alt="company" className='company'/>
         </a>
@@ -18,15 +18,15 @@ const Header = () => {
           <li className='top100'>Top 100</li> */}
           {/* <li><button className="open-collection">Відкрити збір</button></li> */}
           <li><button className="sell">Продати</button></li>
-          <li className='login'>
-            <a href="/login" className="login">Увійти</a>
+          <li className='cabinet'>
+            <a href="/cabinet" className="cabinet">Кабінет</a>
           </li>
-          <li className='signup'>
-            <a href="/signup" className="signup">Реєстрація</a>
+          <li className='logout'>
+            <a href="/home" className="logout">Вийти</a>
           </li>
         </ul>
     </div>
   )
 }
 
-export default Header;
+export default HeaderAccount;

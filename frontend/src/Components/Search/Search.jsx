@@ -8,10 +8,10 @@ import filter from '../Assets/filter.svg'
 const Search = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: '',
-    price: '',
-  });
+  // const [selectedFilters, setSelectedFilters] = useState({
+  //   category: '',
+  //   price: '',
+  // });
 
   const handleApplyFilters = () => {
     setIsFilterOpen(false);
@@ -31,7 +31,9 @@ const Search = () => {
         <div className='search-box'>
           <input type="text" className="search-box-text" placeholder='...Знайти лот' />
           <a onClick={handleSearch}>
+            <a href="all-auctions">
               <img src={search} alt="search" className='search' />
+            </a>
           </a>
         </div>
         <div className='filter-container'>
