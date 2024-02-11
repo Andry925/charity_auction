@@ -34,15 +34,6 @@ class APIRootView(APIView):
         }
         return Response(api_endpoints)
 
-def home_view(request):
-    categories = Category.objects.all()
-    latest_items = Item.objects.filter(is_active=True).order_by('-id')[:10]
-    return render(request, 'home.html', {'categories': categories, 'latest_items': latest_items})
-
-def auction_list(request):
-    auctions = Item.objects.filter(is_active=True).order_by('-end_time')
-    return render(request, 'auctions.html', {'auctions': auctions})
-
 class CategoryListView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
