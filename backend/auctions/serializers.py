@@ -9,7 +9,8 @@ class CategorySerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        fields = '__all__'
+        fields = ['title', 'description', 'starting_bid', 'current_bid', 'image_url', 'category', 'end_time', 'is_active', 'owner']
+
 
 class BidSerializer(serializers.ModelSerializer):
     class Meta:

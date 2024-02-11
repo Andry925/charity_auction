@@ -1,8 +1,5 @@
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path
 from . import views
-from django.contrib import admin
 
 urlpatterns = [
     path('categories/', views.CategoryListView.as_view(), name='category-list'),
@@ -13,4 +10,4 @@ urlpatterns = [
     path('create-auction/', views.CreateAuctionAPIView.as_view(), name='create-auction'),
     path('edit-auction/<int:pk>/', views.EditAuctionAPIView.as_view(), name='edit-auction'),
     path('', views.api_root, name='api-root'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

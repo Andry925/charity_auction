@@ -24,7 +24,6 @@ const HomeAllAuctions = () => {
     fetchAuctions();
   }, []);
 
-  // Navigate to auction creation page
   const navigateToCreateAuction = () => {
     navigate('/create-auction');
   };
@@ -48,7 +47,7 @@ const HomeAllAuctions = () => {
         <section className='auctions-section'>
           {auctions.map(auction => (
             <div key={auction.id} className='auction-item'>
-              <img src={'../images/'+auction.id+'.jpg'} alt={auction.title} className="auction-image"/>
+              <img src={auction.image_url} alt={auction.title} className="auction-image"/>
               <h3>{auction.title}</h3>
               <p>{auction.description}</p>
             </div>
