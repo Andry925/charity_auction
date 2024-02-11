@@ -16,7 +16,7 @@ const CreateAuction = () => {
         e.preventDefault();
         try {
             // Використовуйте відповідний URL та налаштування авторизації
-            const response = await axios.post('http://127.0.0.1:8000/api/create-auction', formData, {
+            const response = await axios.post('http://127.0.0.1:8000/api/create-auction/', formData, {
                 headers: {
                     'Authorization': 'Token'
                 }

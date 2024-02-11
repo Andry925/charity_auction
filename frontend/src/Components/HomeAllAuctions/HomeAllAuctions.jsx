@@ -48,7 +48,7 @@ const HomeAllAuctions = () => {
         <section className='auctions-section'>
           {auctions.map(auction => (
             <div key={auction.id} className='auction-item'>
-              <img src={auction.img} alt={auction.title} className="auction-image"/>
+              <img src={'../images/'+auction.id+'.jpg'} alt={auction.title} className="auction-image"/>
               <h3>{auction.title}</h3>
               <p>{auction.description}</p>
             </div>

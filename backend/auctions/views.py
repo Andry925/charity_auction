@@ -66,11 +66,11 @@ class ItemListView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
 
 class CreateAuctionAPIView(generics.CreateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
     serializer_class = ItemSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    #def perform_create(self, serializer):
+        #serializer.save(owner=self.request.user)
 
 class BidListView(generics.ListAPIView):
     queryset = Bid.objects.all()
@@ -78,12 +78,12 @@ class BidListView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
 
 class LatestItemsListAPIView(generics.ListAPIView):
-    queryset = Item.objects.filter(is_active=True).order_by('-id')[:10]
+    queryset = Item.objects.filter(is_active=True).order_by('-id')[:5]
     serializer_class = ItemSerializer
     permission_classes = [permissions.AllowAny]
 
 class CreateBidView(generics.CreateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
     serializer_class = BidSerializer
 
     def perform_create(self, serializer):
