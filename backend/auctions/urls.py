@@ -1,24 +1,16 @@
-from django.urls import path
-from .views import (
-    CategoryListView,
-    ItemListView,
-    BidListView,
-    CreateBidView,
-    EditAuctionAPIView,
-    LatestItemsListAPIView,
-    CreateAuctionAPIView,
-    APIRootView,
-)
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
+from django.contrib import admin
 
 urlpatterns = [
-    path('api/', APIRootView.as_view(), name='api-root'),
-    path('api/categories/', CategoryListView.as_view(), name='category-list'),
-    path('api/items/', ItemListView.as_view(), name='item-list'),
-    path('api/bids/', BidListView.as_view(), name='bid-list'),
-    path('api/items/<int:item_id>/bid/', CreateBidView.as_view(), name='create-bid'),
-    path('api/latest-items/', LatestItemsListAPIView.as_view(), name='latest-items'),
-    path('api/create-auction/', CreateAuctionAPIView.as_view(), name='create-auction'),
-    path('api/edit-auction/<int:pk>/', EditAuctionAPIView.as_view(), name='edit-auction'),
+    path('categories/', views.CategoryListView.as_view(), name='category-list'),
+    path('items/', views.ItemListView.as_view(), name='item-list'),
+    path('bids/', views.BidListView.as_view(), name='bid-list'),
+    path('items/<int:item_id>/bid/', views.CreateBidView.as_view(), name='create-bid'),
+    path('latest-items/', views.LatestItemsListAPIView.as_view(), name='latest-items'),
+    path('create-auction/', views.CreateAuctionAPIView.as_view(), name='create-auction'),
+    path('edit-auction/<int:pk>/', views.EditAuctionAPIView.as_view(), name='edit-auction'),
+    path('', views.api_root, name='api-root'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

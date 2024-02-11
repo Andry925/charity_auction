@@ -76,3 +76,26 @@
     width: 388px;
     height: 429px;
 }
+
+
+.auctions-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.auction-item {
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+}
+
+.auction-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+

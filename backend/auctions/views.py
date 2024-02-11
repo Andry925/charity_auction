@@ -8,6 +8,21 @@ from django.utils import timezone
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.reverse import reverse
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'categories': reverse('category-list', request=request, format=format),
+        'items': reverse('item-list', request=request, format=format),
+        'bids': reverse('bid-list', request=request, format=format),
+        # Add more APIs here
+    })
+
+
 class APIRootView(APIView):
     def get(self, request):
         api_endpoints = {

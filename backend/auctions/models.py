@@ -13,7 +13,7 @@ class Item(models.Model):
     description = models.TextField()
     starting_bid = models.DecimalField(max_digits=9, decimal_places=2)
     current_bid = models.DecimalField(max_digits=9, decimal_places=2, null=True, blank=True)
-    image_url = models.ImageField(upload_to='media/')
+    image_url = models.ImageField(upload_to='')
     category = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
     end_time = models.DateTimeField()
     is_active = models.BooleanField(default=True)
